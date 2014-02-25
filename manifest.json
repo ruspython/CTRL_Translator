@@ -1,0 +1,33 @@
+{
+	"manifest_version":2,
+
+	"name":"CTRL Translator",
+	"description":"Translate selected text with pressed button.",
+	"version":"1.0",
+
+	"page_action": {
+		"default_icon":"icon.png",
+		"default_title":"Pluralsight Helper",
+		"default_popup":"popup.html"
+	},
+
+	"background":{
+		"scripts":["scripts/background.js"],
+		"persistent":false
+	},
+
+	"content_scripts":[
+		{
+			"matches":["http://*/*"],
+			"js":["scripts/jquery-1.10.2.js", "scripts/page_cs.js"],
+			"css":["page_cs.css"]
+		}
+	],
+
+	"permissions":[
+		"tabs",
+		"http://*/*"
+	]
+
+		
+}

@@ -18,14 +18,14 @@ $(document).ready(function (){
 function render(selectedText){
 	var lang = JSON.parse(checkLang(selectedText))["lang"];
 	var realLang = (lang == "en") ? "ru" : "en";
-	console.log("realLang: "+realLang+ "  lang:  "+ lang); 
-	$.ajax({
-		    url: "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140219T202649Z.14cf94ea5878dfac.c384fd8844422602dda22df054a4c64b073205dc&text="+selectedText+"&lang="+realLang,
-		    dataType: "json",
-		    success: function(response) {
-		    	alert(selectedText +" → "+ response["text"]);
-			}
-	});
+	console.log("realLang: "+realLang+ "  lang:  "+ lang);
+    $.ajax({
+            url: "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140219T202649Z.14cf94ea5878dfac.c384fd8844422602dda22df054a4c64b073205dc&text="+selectedText+"&lang="+realLang,
+            dataType: "json",
+            success: function(response) {
+                alert(response["text"]);
+            }
+    });
 }
 
 function checkLang(text){

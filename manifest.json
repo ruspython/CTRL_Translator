@@ -2,15 +2,18 @@
 	"manifest_version":2,
 
 	"name":"CTRL Translator",
-	"description":"Translate selected text with pressed button.",
+	"description":"Translate selected text with pressed CTRL button.",
 	"version":"1.0",
 
 	"page_action": {
 		"default_icon":"icon.png",
-		"default_title":"Pluralsight Helper",
+		"default_title":"CTRL Translator",
 		"default_popup":"popup.html"
 	},
-
+    "icons": {
+        "16": "icon.png",
+        "128": "icon128.png"
+    },
 	"background":{
 		"scripts":["scripts/background.js"],
 		"persistent":false
